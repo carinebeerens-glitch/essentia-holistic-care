@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essentia Holistic Care — Carine Beerens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --tc:     #9B4012;
+  --tc-mid: #C06030;
+  --tc-pale:#F5E5DA;
+  --rose:   #C9967E;
+  --rose-lt:#EDD9CE;
+  --cream:  #FFF8F3;
+  --cream2: #FAF2EB;
+  --dk:     #6B3518;
+  --dk2:    #3A1C0A;
+  --txt:    #2A1A0E;
+  --txt2:   #5C3A24;
+  --txt3:   #9B7060;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--txt);
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(255,248,243,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rose-lt);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 500;
+  color: var(--tc); text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-links { display: flex; align-items: center; gap: 2.25rem; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 400;
+  color: var(--txt2); text-decoration: none;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--tc); }
+.nav-btn {
+  background: var(--tc) !important;
+  color: #fff !important;
+  padding: 0.45rem 1.35rem;
+  border-radius: 2px;
+}
+.nav-btn:hover { background: var(--dk) !important; }
+
+/* ── GEDEELD ── */
+.label {
+  font-size: 0.7rem; letter-spacing: 0.17em;
+  text-transform: uppercase; color: var(--rose);
+  font-weight: 400; margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.65rem;
+}
+.label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--rose); }
+.label-center { justify-content: center; }
+.label-light { color: rgba(255,248,243,0.4); }
+.label-light::before { background: rgba(255,248,243,0.25); }
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 400; line-height: 1.2;
+  color: var(--dk2); margin-bottom: 1.5rem;
+}
+h2 em { font-style: italic; color: var(--tc); }
+h2.light { color: var(--cream); }
+h2.light em { color: var(--rose); }
+
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; font-weight: 500;
+  color: var(--dk); margin-bottom: 0.6rem;
+}
+
+p { color: var(--txt2); margin-bottom: 1.2rem; }
+p:last-child { margin-bottom: 0; }
+
+section { display: block; padding: 100px 6%; }
+
+.btn {
+  display: inline-block; text-decoration: none;
+  padding: 0.9rem 2.4rem;
+  font-size: 0.8rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 400;
+  border-radius: 2px; transition: all 0.2s;
+}
+.btn-solid { background: var(--tc); color: #fff; }
+.btn-solid:hover { background: var(--dk); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--tc); border: 1px solid var(--tc); }
+.btn-outline:hover { background: var(--tc); color: #fff; }
+.btn-outline-light { background: transparent; color: #fff; border: 1px solid rgba(255,248,243,0.35); }
+.btn-outline-light:hover { background: rgba(255,248,243,0.08); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 6% 100px;
+  background: var(--cream);
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 540px; height: 540px; border-radius: 50%;
+  background: var(--rose-lt); opacity: 0.3;
+}
+#hero::after {
+  content: ''; position: absolute; bottom: -100px; left: 15%;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: var(--tc-pale); opacity: 0.45;
+}
+.hero-inner { max-width: 720px; position: relative; z-index: 1; }
+.hero-tagline {
+  font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--txt3);
+  font-weight: 400; margin-bottom: 1.75rem;
+}
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  font-weight: 400; line-height: 1.12;
+  color: var(--dk2); margin-bottom: 1.75rem;
+}
+.hero-h1 em { font-style: italic; color: var(--tc); }
+.hero-sub {
+  font-size: 1.08rem; color: var(--txt3);
+  font-weight: 300; line-height: 1.9;
+  max-width: 520px; margin-bottom: 2.75rem;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── GUASHA ── */
+#guasha { background: #fff; }
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8%; align-items: start; margin-top: 3rem;
+}
+.sfeer-box {
+  background: var(--tc-pale); border-radius: 4px;
+  padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;
+}
+.sfeer-item { display: flex; gap: 1rem; align-items: flex-start; }
+.sfeer-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tc); margin-top: 0.55rem; flex-shrink: 0;
+}
+.sfeer-item p { font-size: 0.95rem; line-height: 1.75; }
+.sfeer-item p strong { display: block; font-weight: 500; color: var(--dk); margin-bottom: 0.15rem; }
+
+/* ── OPBOUW ── */
+#opbouw { background: var(--cream2); }
+.opbouw-intro { max-width: 640px; margin-bottom: 4.5rem; }
+.stappen { display: flex; flex-direction: column; max-width: 820px; }
+.stap {
+  display: grid; grid-template-columns: 72px 1fr;
+  gap: 2rem; padding: 2.75rem 0;
+  border-bottom: 1px solid var(--rose-lt); align-items: start;
+}
+.stap:first-child { border-top: 1px solid var(--rose-lt); }
+.stap-nr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 300;
+  color: var(--rose-lt); line-height: 1; padding-top: 0.15rem;
+}
+.stap h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+.stap p { font-size: 1rem; color: var(--txt3); line-height: 1.85; }
+.stap-vraag {
+  margin-top: 0.9rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-style: italic;
+  color: var(--tc); font-weight: 400; line-height: 1.5;
+}
+
+/* ── QUOTE BANNER ── */
+#quote {
+  background: var(--dk2); padding: 90px 6%; text-align: center;
+}
+#quote blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+  font-weight: 300; font-style: italic;
+  color: var(--cream); line-height: 1.45;
+  max-width: 740px; margin: 0 auto 0.6rem;
+}
+#quote blockquote em { font-style: normal; color: var(--rose); }
+#quote .sub {
+  font-size: 0.82rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,248,243,0.3);
+  font-weight: 300;
+}
+
+/* ── AANBOD ── */
+#aanbod { background: #fff; }
+.aanbod-intro { max-width: 620px; margin-bottom: 3.5rem; }
+.aanbod-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; align-items: start;
+}
+.aanbod-kaart {
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--rose-lt);
+  display: flex; flex-direction: column;
+}
+.aanbod-kaart.featured { border: 2px solid var(--tc); }
+.kaart-top { height: 5px; background: var(--rose); }
+.kaart-top.featured { background: var(--tc); }
+.kaart-body { padding: 2rem 2rem 1.75rem; flex: 1; }
+.kaart-badge {
+  display: inline-block; font-size: 0.68rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 2px;
+  margin-bottom: 1.1rem; font-weight: 500;
+}
+.badge-basic { background: var(--tc-pale); color: var(--dk); }
+.badge-kern  { background: var(--tc); color: #fff; }
+.kaart-naam {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 500;
+  color: var(--dk2); margin-bottom: 0.25rem;
+}
+.kaart-sub { font-size: 0.88rem; color: var(--txt3); font-weight: 300; margin-bottom: 1.5rem; line-height: 1.5; }
+.kaart-divider { height: 1px; background: var(--rose-lt); margin: 0 0 1.5rem; }
+.kaart-items { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.kaart-items li {
+  display: flex; gap: 0.85rem; align-items: flex-start;
+  font-size: 0.95rem; color: var(--txt2); font-weight: 300; line-height: 1.6;
+}
+.kaart-items li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--rose); margin-top: 0.5rem; flex-shrink: 0;
+}
+.kaart-items li.tc::before { background: var(--tc); }
+.kaart-statement {
+  margin-top: 1.5rem; padding: 1.25rem 1.5rem;
+  background: var(--tc-pale); border-radius: 2px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: var(--dk); font-weight: 400; line-height: 1.55;
+}
+.kaart-footer { padding: 1.25rem 2rem 1.75rem; border-top: 1px solid var(--rose-lt); }
+.kaart-prijs { display: flex; align-items: baseline; gap: 6px; margin-bottom: 0.35rem; }
+.prijs-bedrag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 500; color: var(--dk2);
+}
+.prijs-unit { font-size: 0.85rem; color: var(--txt3); font-weight: 300; }
+.prijs-toelichting { font-size: 0.8rem; color: var(--txt3); font-weight: 300; }
+
+/* ── WERKWIJZE ── */
+#werkwijze { background: var(--cream2); }
+.werkwijze-intro { max-width: 580px; margin-bottom: 4rem; }
+.werkwijze-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.ww-kaart { padding: 2rem 1.75rem; border-top: 2px solid var(--tc); }
+.ww-kaart h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+.ww-kaart p { font-size: 0.92rem; color: var(--txt3); line-height: 1.7; }
+
+/* ── OVER MIJ ── */
+#over { background: #fff; }
+.over-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8%; align-items: start;
+}
+.over-tekst p { font-size: 1.02rem; line-height: 1.9; }
+
+.over-citaat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; font-style: italic; font-weight: 400;
+  color: var(--dk); line-height: 1.6;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rose-lt);
+  margin-bottom: 1.75rem;
+}
+
+/* ── OPBOUW: WIE ── */
+#wie { background: var(--tc-pale); }
+.wie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; }
+.wie-grid p { font-size: 1.02rem; line-height: 1.9; }
+
+.stap-vragen {
+  display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem;
+}
+.trigger {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--rose-lt);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-style: italic;
+  color: var(--dk); font-weight: 400; line-height: 1.5;
+  display: flex; gap: 0.75rem; align-items: flex-start;
+}
+.trigger::before { content: '→'; font-style: normal; color: var(--tc); font-size: 1rem; margin-top: 0.15rem; flex-shrink: 0; }
+.trigger:first-child { border-top: 1px solid var(--rose-lt); }
+
+.kern-vragen { display: flex; flex-direction: column; gap: 1.25rem; }
+.kvraag {
+  background: #fff; border-radius: 4px;
+  padding: 1.75rem 2rem;
+  border-left: 3px solid var(--tc);
+}
+.kvraag-nr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300;
+  color: var(--rose-lt); line-height: 1; margin-bottom: 0.35rem;
+}
+.kvraag h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.kvraag p { font-size: 0.88rem; color: var(--txt3); line-height: 1.7; }
+
+/* ── LAGEN BOX ── */
+.lagen-box { background: var(--dk2); border-radius: 4px; overflow: hidden; margin-top: 1.25rem; }
+.laag {
+  padding: 1.4rem 1.75rem;
+  border-bottom: 1px solid rgba(255,248,243,0.07);
+  display: flex; gap: 1.1rem; align-items: flex-start;
+}
+.laag:last-child { border-bottom: none; }
+.laag-nr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 300;
+  color: var(--rose); opacity: 0.5;
+  line-height: 1; flex-shrink: 0; width: 1.8rem;
+}
+.laag-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--cream); margin-bottom: 0.25rem; }
+.laag-body { font-size: 0.85rem; color: rgba(255,248,243,0.5); font-weight: 300; line-height: 1.65; }
+
+.over-kader {
+  background: var(--tc-pale); border-radius: 4px; padding: 2.25rem 2.5rem; margin-bottom: 1.25rem;
+}
+.over-kader blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-style: italic;
+  color: var(--dk); font-weight: 400; line-height: 1.65;
+  margin-bottom: 0.9rem;
+}
+.over-kader p { font-size: 0.88rem; color: var(--txt3); font-weight: 300; line-height: 1.7; }
+
+/* ── CONTACT ── */
+#contact { background: var(--dk2); padding: 120px 6%; text-align: center; }
+#contact h2 { color: var(--cream); }
+#contact h2 em { color: var(--rose); }
+.contact-intro {
+  max-width: 520px; margin: 0 auto 2.75rem;
+  font-size: 1.02rem; color: rgba(255,248,243,0.55);
+  font-weight: 300; line-height: 1.85;
+}
+.contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.contact-info { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; }
+.contact-info a {
+  font-size: 0.82rem; color: rgba(255,248,243,0.35);
+  text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s;
+}
+.contact-info a:hover { color: var(--rose); }
+.contact-info span { font-size: 0.82rem; color: rgba(255,248,243,0.2); letter-spacing: 0.05em; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dk2);
+  border-top: 1px solid rgba(255,248,243,0.06);
+  padding: 2rem 6%;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+footer p { font-size: 0.78rem; color: rgba(255,248,243,0.2); font-weight: 300; letter-spacing: 0.04em; }
+footer a { color: var(--rose); text-decoration: none; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: rgba(255,248,243,0.25); letter-spacing: 0.04em; }
+
+/* ── BEELD ── */
+.hero-grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 6%; align-items: center;
+  max-width: 1180px; width: 100%;
+  position: relative; z-index: 1;
+}
+.hero-grid .hero-inner { max-width: 100%; }
+.hero-beeld { position: relative; display: flex; justify-content: center; }
+.hero-beeld img {
+  width: 340px; height: 340px; max-width: 100%;
+  object-fit: cover; border-radius: 50%;
+  box-shadow: 0 22px 55px rgba(58,28,10,0.22);
+  display: block;
+}
+.beeld-band {
+  margin: 3.5rem auto 0; width: 320px; height: 320px; max-width: 100%;
+  border-radius: 50%; overflow: hidden;
+  box-shadow: 0 18px 50px rgba(58,28,10,0.16);
+}
+.beeld-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.beeld-onderschrift { text-align: center; }
+.beeld-onderschrift {
+  font-size: 0.78rem; color: var(--txt3); font-weight: 300;
+  letter-spacing: 0.03em; margin-top: 0.9rem; font-style: italic;
+}
+.over-portret {
+  width: 88px; height: 88px; border-radius: 50%;
+  object-fit: cover; margin-bottom: 1.25rem;
+  border: 3px solid var(--rose-lt);
+}
+.footer-logo-img { height: 34px; width: auto; opacity: 0.85; }
+
+/* ── VIDEO / OUTDOOR ── */
+#outdoor { background: var(--dk); text-align: center; }
+#outdoor .label { justify-content: center; }
+#outdoor h2 { color: var(--cream); }
+#outdoor h2 em { color: var(--rose); }
+.outdoor-intro {
+  max-width: 620px; margin: 0 auto 3rem;
+}
+.outdoor-intro p { color: rgba(255,248,243,0.72); font-size: 1.05rem; line-height: 1.9; }
+.video-wrap {
+  max-width: 860px; margin: 0 auto;
+  border-radius: 6px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  background: #000;
+}
+.video-wrap video { width: 100%; height: auto; display: block; }
+.outdoor-onderschrift {
+  font-size: 0.8rem; color: rgba(255,248,243,0.45);
+  font-weight: 300; font-style: italic; margin-top: 1.1rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .two-col, .aanbod-grid, .over-grid, .wie-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-beeld { max-width: 440px; }
+  .werkwijze-grid { grid-template-columns: 1fr 1fr; }
+  .stap { grid-template-columns: 52px 1fr; gap: 1.25rem; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .werkwijze-grid { grid-template-columns: 1fr; }
+  section { padding: 70px 5%; }
+  #hero { padding: 110px 5% 70px; }
+  #contact { padding: 80px 5%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">Essentia Holistic Care</a>
+  <div class="nav-links">
+    <a href="#guasha">Guasha</a>
+    <a href="#aanbod">Aanbod</a>
+    <a href="#over">Over mij</a>
+    <a href="#contact" class="nav-btn">Boek een sessie</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-tagline">Essentia Holistic Care — Carine Beerens</p>
+    <h1 class="hero-h1">
+      Waar het lichaam loslaat<br>
+      wat het hoofd <em>vasthoudt.</em>
+    </h1>
+    <p class="hero-sub">
+      Soms heeft je lichaam meer te vertellen dan je hoofd kan horen.
+      Ik help je luisteren — via guasha, via coaching, of allebei.
+      Vanuit het lichaam. Naar wie je werkelijk bent.
+    </p>
+    <div class="hero-btns">
+      <a href="#aanbod" class="btn btn-solid">Bekijk het aanbod</a>
+      <a href="#contact" class="btn btn-outline">Plan een kennismaking</a>
+    </div>
+  </div>
+</section>
+
+<!-- GUASHA -->
+<section id="guasha">
+  <p class="label">Beginnen bij het begin</p>
+  <h2>Wat guasha voor<br>je lichaam <em>kan doen.</em></h2>
+  <div class="two-col">
+    <div>
+      <p>Guasha is een oude behandeltechniek waarbij de huid met een speciale steen bewerkt wordt. Het is geen massage — het is een zachte, gerichte manier om het lichaam te helpen loslaten wat het vasthoudt.</p>
+      <p>Spanning. Vermoeidheid. Stijfheid. Maar ook iets wat moeilijker te benoemen is: die constante ondertoon van altijd aan moeten staan, erbij moeten blijven, net iets te weinig tot rust komen.</p>
+      <p>Na een guasha behandeling voelen mensen zich lichter. Alsof er iets van hun schouders is gevallen — en dat is niet alleen metaforisch. Het lichaam heeft daadwerkelijk spanning losgelaten. De adem gaat dieper. De stilte is minder ongemakkelijk. Je bent er gewoon even — <em>in jezelf.</em></p>
+      <p>Dat is al waardevol op zichzelf. En het kan ook de start zijn van iets meer.</p>
+    </div>
+    <div class="sfeer-box">
+      <div class="sfeer-item">
+        <div class="sfeer-dot"></div>
+        <p><strong>Spanning loslaten</strong>Guasha ontspant het bindweefsel en stimuleert de doorbloeding — het lichaam komt letterlijk tot rust.</p>
+      </div>
+      <div class="sfeer-item">
+        <div class="sfeer-dot"></div>
+        <p><strong>Het zenuwstelsel kalmeren</strong>De behandeling helpt je lichaam uit de stand van alertheid stappen. Niet door het te vertellen — maar door het te laten voelen.</p>
+      </div>
+      <div class="sfeer-item">
+        <div class="sfeer-dot"></div>
+        <p><strong>Ruimte creëren</strong>Als het lichaam ontspant, wordt het stiller. Dingen worden helderder. Wat je al wist maar nog niet zag, wordt zichtbaar.</p>
+      </div>
+      <div class="sfeer-item">
+        <div class="sfeer-dot"></div>
+        <p><strong>Aandacht voor jezelf</strong>60 minuten volledig aandacht voor jouw lichaam. Zonder agenda. Zonder presteren. Zonder dat je iets hoeft te doen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="beeld-band">
+    <img src="essentia-ruimte.jpg" alt="De praktijkruimte van Essentia Holistic Care in Best">
+  </div>
+  <p class="beeld-onderschrift">De praktijk in Best — een plek om even helemaal tot rust te komen.</p>
+</section>
+
+<!-- OUTDOOR VIDEO -->
+
+<!-- QUOTE -->
+<div id="quote">
+  <blockquote>Disconnectie van jezelf heeft consequenties.<br><em>Op elk niveau.</em></blockquote>
+  <p class="sub" style="margin-top:0.5rem;">En verbinding met jezelf ook.</p>
+</div>
+
+<!-- AANBOD -->
+<section id="aanbod">
+  <div class="aanbod-intro">
+    <p class="label">Het aanbod</p>
+    <h2>Twee manieren om<br><em>te beginnen.</em></h2>
+    <p>Veel mensen beginnen met een guasha sessie — gewoon om te ervaren wat het doet. Anderen komen met een concrete hulpvraag en willen direct dieper gaan. Beide is goed. Jij kiest wat bij je past.</p>
+  </div>
+  <div class="aanbod-grid">
+
+    <div class="aanbod-kaart">
+      <div class="kaart-top"></div>
+      <div class="kaart-body">
+        <span class="kaart-badge badge-basic">Instap</span>
+        <p class="kaart-naam">Essentia Stress Release</p>
+        <p class="kaart-sub">Een guasha behandeling — spanning eruit, rust erin</p>
+        <div class="kaart-divider"></div>
+        <ul class="kaart-items">
+          <li>Eerste afspraak — intake + guasha behandeling (90 minuten)</li>
+          <li>Vervolgbehandelingen — 60 minuten ontspannen, loslaten, aanwezig zijn</li>
+          <li>Losse sessies — geen verplichtingen, kom wanneer jij het nodig hebt</li>
+        </ul>
+        <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--txt3); font-weight:300; line-height:1.7;">Je hoeft geen grote hulpvraag te hebben. Je wil gewoon even écht ontspannen. Loslaten. Aanwezig zijn in je eigen lichaam — zonder agenda, zonder presteren. Dat is genoeg.</p>
+      </div>
+      <div class="kaart-footer">
+        <div class="kaart-prijs">
+          <span class="prijs-bedrag">€85</span>
+          <span class="prijs-unit">eerste afspraak</span>
+        </div>
+        <p class="prijs-toelichting">Eerste afspraak 90 min, inclusief intake — daarna €75 per behandeling (60 min).</p>
+      </div>
+    </div>
+
+    <div class="aanbod-kaart featured">
+      <div class="kaart-top featured"></div>
+      <div class="kaart-body">
+        <span class="kaart-badge badge-kern">Maatwerk</span>
+        <p class="kaart-naam">Essentia Resilience</p>
+        <p class="kaart-sub">Coachingtraject met fysieke behandeling — opgebouwd rond jouw veerkracht</p>
+        <div class="kaart-divider"></div>
+        <ul class="kaart-items">
+          <li class="tc">Voor wie bovengemiddeld veel stress en spanning ervaart</li>
+          <li class="tc">Coaching én guasha — mentaal, emotioneel én fysiek</li>
+          <li class="tc">Leren goed voor jezelf zorgen, juist als de druk oploopt</li>
+          <li class="tc">Je belastbaarheid en veerkracht structureel opbouwen</li>
+          <li class="tc">Een programma op maat — na een uitgebreide intake</li>
+        </ul>
+        <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--txt3); font-weight:300; line-height:1.7;">Uitdagende omstandigheden hakken er flink in op je systeem. Burn-out of chronische stress zijn dan niet het probleem — ze zijn het signaal. In dit traject leer je goed voor jezelf te zorgen wanneer de duimschroeven worden aangedraaid. Mentaal, emotioneel én fysiek. Zodat je je staande houdt — en je veerkracht groeit in plaats van slinkt.</p>
+        <p style="margin-top:1rem; font-size:0.9rem; color:var(--txt3); font-weight:300; line-height:1.7;">Geen standaardpakket. We beginnen met een uitgebreide intake — om te begrijpen waar jij staat, wat er speelt en wat jij nodig hebt. Op basis daarvan stel ik een programma op maat voor: het aantal coachsessies en behandelingen dat bij jouw situatie past. Dat bespreken we samen, zodat je vooraf precies weet wat je kunt verwachten — inhoudelijk én qua investering.</p>
+        <div class="kaart-statement">
+          Wacht je tot de spanning te hoog oploopt? Of zorg je nu dat je staat als het zwaar wordt?
+        </div>
+      </div>
+      <div class="kaart-footer">
+        <div class="kaart-prijs">
+          <span class="prijs-bedrag">Offerte op maat</span>
+        </div>
+        <p class="prijs-toelichting">Na een uitgebreide intake stel ik een programma en offerte op maat voor — afgestemd op jouw situatie.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUTDOOR VIDEO (seizoensextra) -->
+<section id="outdoor">
+  <p class="label">Bij mooi weer</p>
+  <div class="outdoor-intro">
+    <h2 class="light">Soms verplaatsen we<br>de behandeling <em>naar buiten.</em></h2>
+    <p>Meestal werk ik binnen, in de praktijk in Best. Maar als het buiten warm en mooi is, kan een guasha behandeling ook in de tuin — onder de bomen, in de open lucht. Een fijne extra wanneer het seizoen zich ervoor leent.</p>
+  </div>
+  <div class="video-wrap">
+    <video controls preload="metadata" playsinline>
+      <source src="essentia-outdoor.mp4" type="video/mp4">
+      Je browser ondersteunt deze video niet.
+    </video>
+  </div>
+  <p class="outdoor-onderschrift">Een impressie van een behandeling in de tuin.</p>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze">
+  <div class="werkwijze-intro">
+    <p class="label">Hoe ik werk</p>
+    <h2>Drie lagen.<br><em>Tegelijk.</em></h2>
+    <p>Echte verandering vraagt meer dan één ingang. Ik werk op mentaal, emotioneel én fysiek niveau — niet na elkaar, maar gelijktijdig. Want de drie hangen onlosmakelijk samen.</p>
+  </div>
+  <div class="werkwijze-grid">
+    <div class="ww-kaart">
+      <h3>Het lichaam</h3>
+      <p>Via guasha help ik het lichaam loslaten wat het vasthoudt. Dat is de toegangspoort. Wat het hoofd nog niet kan zien, voelt het lichaam al lang.</p>
+    </div>
+    <div class="ww-kaart">
+      <h3>De emotie</h3>
+      <p>Emoties zijn geen zwakte — het zijn signalen. We leren ze te lezen zonder erdoor meegesleurd te worden. Dat is veerkracht.</p>
+    </div>
+    <div class="ww-kaart">
+      <h3>Het bewustzijn</h3>
+      <p>Vanuit de ruimte die ontstaat, worden patronen zichtbaar. En dan — pas dan — kunnen ze écht veranderen. Duurzaam en van binnenuit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OVER MIJ -->
+<section id="over">
+  <div class="over-grid">
+    <div class="over-tekst">
+      <p class="label">Over mij</p>
+      <h2>Ik ken de weg omdat<br>ik hem zelf <em>gegaan ben.</em></h2>
+      <p class="over-citaat">"Wat ik toen niet wist, maar nu wel — is dat je huidige persoonlijkheid je huidige realiteit creëert. En dat je daar de controle over hebt."</p>
+      <p>Er was een periode in mijn leven waarop ik vastliep. Niet spectaculair — gewoon dat stille gevoel dat het leven zwaarder is dan het hoeft te zijn. Ik liep vast in relatie tot mezelf en mijn werk. En naarmate het moeizamer ging, merkte ik dat ook mijn omgeving dat begon te voelen.</p>
+      <p>Wat ik op dat moment niet wist: als jouw realiteit onprettig of zwaar aanvoelt, moet er iets in <em>jou</em> veranderen. Niet in je omstandigheden. Niet in de mensen om je heen. In jou. In hoe je denkt, voelt en reageert. Daar ligt de controle. En daar begint de magie.</p>
+      <p>In 2020 volgde ik de Holistische Doorbraak Coach HBO-opleiding bij Unlimited People Academy. Ik ontdekte dat mijn persoonlijkheid — mijn gedachten, mijn gedrag, mijn emoties — grotendeels onbewust geprogrammeerd was. Niet bewust gekozen. En dat ik die bedrading kon veranderen. Langzaam. Eerlijk. Van binnenuit.</p>
+      <p>Nu volg ik de guasha opleiding bij Santai — om het lichaam mee te nemen in dat proces. Want wat de bewuste ik nog niet kan zien, zit onbewust wél in het lichaam opgeslagen. En dat maakt alles completer.</p>
+    </div>
+    <div>
+      <div class="over-kader">
+        <img src="essentia-portret.jpg" alt="Carine Beerens, Essentia Holistic Care" class="over-portret">
+        <blockquote>"Ik ben misschien de eerste — en ook de laatste coach die je ooit nodig hebt."</blockquote>
+        <p>Niet omdat ik bijzonder ben. Maar omdat goed coachen betekent dat je mensen leert zichzelf te begeleiden. Je neemt de tools en het inzicht mee — voor altijd.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WIE IK HELP -->
+<section id="wie">
+  <div class="wie-grid">
+    <div>
+      <p class="label">Voor wie</p>
+      <h2>Voor mensen die bewuster<br>willen leven — vanuit <em>verbinding<br>met zichzelf.</em></h2>
+      <p>Je hebt geen crisis nodig om hier te zijn. Je hoeft niet "erg genoeg" aan de hand te hebben. Het is genoeg dat je voelt dat er meer in je zit dan je nu laat zien of leven.</p>
+      <p>Dat je patronen herkent die je niet meer dienen. Dat je wil weten wie je bent als je de bescherming weghaalt. Dat je niet voor 70% maar voor 100% jezelf wil zijn.</p>
+      <p>Dat is een spannende plek. Echt gaan staan voor wat je denkt, wat je voelt, hoe je naar de wereld kijkt — dat betekent ook dat er mensen iets van zullen vinden. En toch die keuze maken. Dat is waar we naartoe werken.</p>
+
+      <div class="stap-vragen">
+        <div class="trigger">Hoe geef je aan dat je meer tijd of rust nodig hebt — zonder je schuldig te voelen?</div>
+        <div class="trigger">Hoe zeg je waar jouw grens ligt — zonder de verbinding te verliezen?</div>
+        <div class="trigger">Hoe blijf je trouw aan jezelf — terwijl anderen misschien niet meekomen?</div>
+        <div class="trigger">Hoe creëer je meer ruimte voor jezelf — zonder jezelf te verliezen?</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="margin-top:0.25rem;">In 4 vragen naar de kern</p>
+      <div class="kern-vragen">
+        <div class="kvraag">
+          <div class="kvraag-nr">01</div>
+          <h3>Wat werkt in jouw leven?</h3>
+          <p>Niet alles is probleem. Er is altijd iets wat al goed loopt. We beginnen met zien wat er is.</p>
+        </div>
+        <div class="kvraag">
+          <div class="kvraag-nr">02</div>
+          <h3>Wat werkt er niet?</h3>
+          <p>Jij in relatie tot jezelf, je omgeving, je lijf. Waar voel je wrijving of stilstand?</p>
+        </div>
+        <div class="kvraag">
+          <div class="kvraag-nr">03</div>
+          <h3>Welke prijs betaal je daarvoor?</h3>
+          <p>In je gedachten, gevoelens, gedrag. Elk patroon heeft een prijs — en we maken die zichtbaar.</p>
+        </div>
+        <div class="kvraag">
+          <div class="kvraag-nr">04</div>
+          <h3>Wat wil je veranderen?</h3>
+          <p>Niet wat je moet bereiken — maar wat je werkelijk verlangt. Dát is waar we op focussen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="label label-center label-light">De eerste stap</p>
+  <h2 class="light">Benieuwd wat er<br>voor <em>jou</em> mogelijk is?</h2>
+  <p class="contact-intro">Begin met een Essentia Stress Release sessie en ervaar wat guasha voor jou doet. Of kom met een concrete hulpvraag en we kijken samen wat je nodig hebt. Een gratis kennismaking van 20 minuten is altijd mogelijk — plan hem direct via Calendly of stuur een WhatsApp.</p>
+  <div class="contact-btns">
+    <a href="https://calendly.com/essentiaholisticcare/intakegesprek" target="_blank" class="btn btn-solid">Plan een gratis kennismaking →</a>
+    <a href="https://wa.me/31641479507" target="_blank" class="btn btn-outline-light" style="display:inline-flex;align-items:center;gap:0.6rem;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.413A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z" fill="rgba(255,255,255,0.15)"/>
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.413A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm0 18a7.95 7.95 0 0 1-4.073-1.118l-.292-.174-3.027.859.864-3.028-.19-.31A7.95 7.95 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8Zm4.406-5.884c-.241-.12-1.427-.703-1.648-.784-.22-.08-.38-.12-.54.12-.16.241-.621.784-.762.944-.14.16-.28.18-.52.06-.242-.12-1.02-.376-1.943-1.198-.718-.64-1.203-1.43-1.344-1.671-.14-.241-.015-.37.106-.49.108-.108.241-.28.361-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.302-.74-1.782-.194-.468-.393-.404-.54-.412l-.46-.008c-.16 0-.42.06-.64.3-.22.241-.84.82-.84 2.001 0 1.182.86 2.323.98 2.483.12.16 1.692 2.582 4.1 3.62.573.247 1.02.395 1.368.505.575.183 1.099.157 1.513.095.461-.069 1.427-.583 1.628-1.146.2-.562.2-1.044.14-1.145-.06-.1-.22-.16-.46-.28Z" fill="white"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+  <div class="contact-info">
+    <a href="mailto:carinebeerens@gmail.com">carinebeerens@gmail.com</a>
+    <a href="https://wa.me/31641479507" target="_blank">+31 6 41 47 95 07</a>
+    <a href="https://www.instagram.com/carine_beerens/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/carine-beerens/" target="_blank">LinkedIn</a>
+    <span>Best, Noord-Brabant</span>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/31641479507" target="_blank" aria-label="Chat via WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.413A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm0 18a7.95 7.95 0 0 1-4.073-1.118l-.292-.174-3.027.859.864-3.028-.19-.31A7.95 7.95 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8Zm4.406-5.884c-.241-.12-1.427-.703-1.648-.784-.22-.08-.38-.12-.54.12-.16.241-.621.784-.762.944-.14.16-.28.18-.52.06-.242-.12-1.02-.376-1.943-1.198-.718-.64-1.203-1.43-1.344-1.671-.14-.241-.015-.37.106-.49.108-.108.241-.28.361-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.302-.74-1.782-.194-.468-.393-.404-.54-.412l-.46-.008c-.16 0-.42.06-.64.3-.22.241-.84.82-.84 2.001 0 1.182.86 2.323.98 2.483.12.16 1.692 2.582 4.1 3.62.573.247 1.02.395 1.368.505.575.183 1.099.157 1.513.095.461-.069 1.427-.583 1.628-1.146.2-.562.2-1.044.14-1.145-.06-.1-.22-.16-.46-.28Z" fill="white"/>
+  </svg>
+</a>
+
+<footer>
+  <img src="essentia-logo.png" alt="Essentia Holistic Care" class="footer-logo-img">
+  <p>© 2025 Carine Beerens &nbsp;·&nbsp; <a href="#">Privacy</a> &nbsp;·&nbsp; KVK 00000000</p>
+</footer>
+
+</body>
+</html>
