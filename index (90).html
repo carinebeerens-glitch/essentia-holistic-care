@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essentia Holistic Care — Guasha & Coaching in Best</title>
+<meta name="description" content="Innerlijke ontspanning, richting en balans via lichaam én bewustzijn. Guasha lichaamsbehandelingen, gezichtsbehandelingen en bewustzijnswerk via coaching bij Carine Beerens in Best.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracotta:#9B4012;
+    --rose:#C9967E;
+    --cream:#FFF8F3;
+    --brown:#4A2810;
+    --cream-deep:#F5EAE0;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans', sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.6;
+    font-size:17px;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    font-weight:500;
+    line-height:1.15;
+    color:var(--brown);
+  }
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px; position:relative; z-index:1;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--terracotta);
+  }
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:16px;
+    font-weight:700;
+    font-size:.95rem;
+    letter-spacing:.02em;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{
+    background:var(--terracotta);
+    color:var(--cream);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(155,64,18,.28);}
+  .btn-outline{
+    border:1.5px solid var(--terracotta);
+    color:var(--terracotta);
+  }
+  .btn-outline:hover{background:var(--terracotta); color:var(--cream);}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,248,243,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(74,40,16,.08);
+  }
+  nav.container{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{display:flex; align-items:center;}
+  .logo img{height:52px; width:auto; display:block;}
+  @media(max-width:759px){.logo img{height:40px;}}
+  .nav-links{display:flex; gap:28px; font-size:.92rem; font-weight:500;}
+  .nav-links a{opacity:.82; transition:opacity .15s;}
+  .nav-links a:hover{opacity:1; color:var(--terracotta);}
+  .nav-cta{display:none;}
+  @media(min-width:760px){.nav-cta{display:inline-block;}}
+  .menu-toggle{display:block; background:none; border:none; font-size:1.6rem; color:var(--brown); cursor:pointer;}
+  @media(min-width:760px){.menu-toggle{display:none;} .nav-links{display:flex;}}
+  @media(max-width:759px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; background:var(--cream); padding:20px 24px;
+      display:none; gap:16px; border-bottom:1px solid rgba(74,40,16,.08);
+    }
+    .nav-links.open{display:flex;}
+  }
+
+  /* HERO */
+  .hero{padding:72px 0 56px; text-align:center;}
+  .hero .eyebrow{display:block; margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.1rem, 5vw, 3.1rem); max-width:820px; margin:0 auto 20px;}
+  .hero h1 em{color:var(--terracotta); font-style:italic;}
+  h1 em, h2 em{color:var(--terracotta); font-style:italic;}
+  .hero-image{aspect-ratio:1/1; border-radius:50%; overflow:hidden; width:100%; max-width:260px; margin:0 0 40px auto;}
+  .hero-image img{width:100%; height:100%; object-fit:cover; display:block;}
+  .section-photo{aspect-ratio:1/1; border-radius:50%; overflow:hidden; width:100%; max-width:220px; margin:0 0 32px;}
+  .section-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hero p.lead{max-width:600px; margin:0 auto 36px; font-size:1.08rem; opacity:.86;}
+
+  /* SERVICE PICKER */
+  .picker{padding:0 0 64px;}
+  .picker-grid{
+    display:grid; grid-template-columns:1fr; gap:18px;
+  }
+  @media(min-width:760px){.picker-grid{grid-template-columns:repeat(3,1fr);}}
+  .picker-card{
+    background:var(--white);
+    border:1px solid rgba(74,40,16,.1);
+    border-radius:16px;
+    padding:30px 26px;
+    text-align:left;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .picker-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px rgba(74,40,16,.1);
+    border-color:var(--terracotta);
+  }
+  .picker-card .tag{
+    font-size:.66rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--rose); line-height:1.3;
+  }
+  .picker-card h3{font-size:1.55rem;}
+  .picker-card p{font-size:.92rem; opacity:.8; flex-grow:1;}
+  .picker-card .go{font-size:.88rem; font-weight:700; color:var(--terracotta);}
+
+  /* SECTIONS */
+  section{padding:80px 0; scroll-margin-top:84px;}
+  #lichaam, #gezicht, #bewustzijn, #tarieven, #over{scroll-margin-top:84px;}
+  section.alt{background:var(--cream-deep);}
+  .section-head{max-width:640px; margin:0 0 48px;}
+  .section-head .eyebrow{display:block; margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);}
+  .section-head p{margin-top:14px; opacity:.85;}
+
+  .service-block{
+    display:grid; gap:40px;
+  }
+  @media(min-width:820px){.service-block{grid-template-columns:1.1fr .9fr;}}
+  .service-copy h3{font-size:1.5rem; margin-bottom:10px;}
+  .service-copy p{margin-bottom:16px; opacity:.88;}
+
+  .filosofie-grid{display:grid; gap:28px; margin-top:8px; align-items:start;}
+  @media(min-width:820px){.filosofie-grid{grid-template-columns:1.15fr .85fr;}}
+  .filosofie-photo img{width:100%; border-radius:16px; display:block; object-fit:cover;}
+  .filosofie-photo .caption{font-size:.85rem; opacity:.65; font-style:italic; margin-top:10px;}
+
+  .klachten-list{
+    list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 26px;
+  }
+  .klachten-list li{
+    background:var(--white);
+    border:1px solid rgba(74,40,16,.12);
+    padding:8px 16px;
+    border-radius:24px;
+    font-size:.86rem;
+  }
+  section.alt .klachten-list li{background:var(--cream);}
+
+  .price-card{
+    background:var(--white);
+    border:1px solid rgba(74,40,16,.1);
+    border-radius:16px;
+    padding:26px 28px;
+  }
+  section.alt .price-card{background:var(--cream);}
+  .price-card .amount{font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--terracotta); margin:6px 0 4px;}
+  .price-card .duration{font-size:.85rem; opacity:.7; margin-bottom:14px;}
+  .price-card ul{list-style:none; margin:0 0 20px; font-size:.9rem;}
+  .price-card ul li{padding:5px 0; border-top:1px dashed rgba(74,40,16,.15);}
+  .price-card ul li:first-child{border-top:none;}
+
+  /* TARIEVEN OVERVIEW */
+  .tarieven-grid{display:grid; gap:20px; grid-template-columns:1fr;}
+  @media(min-width:760px){.tarieven-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.tarieven-grid{grid-template-columns:repeat(auto-fit, minmax(190px,1fr));}}
+
+  /* PRICE OPTIONS GRID (Lichaam) */
+  .price-options{display:grid; gap:20px; grid-template-columns:1fr; margin-top:20px;}
+  @media(min-width:820px){.price-options{grid-template-columns:repeat(3,1fr); align-items:start;}}
+  .price-options.cols-1{max-width:380px;}
+  .price-options.cols-1,.price-options.cols-2{margin-left:0;}
+  @media(min-width:820px){
+    .price-options.cols-1{grid-template-columns:1fr;}
+    .price-options.cols-2{grid-template-columns:repeat(2,1fr); max-width:620px;}
+  }
+  .price-options .price-card{height:100%; display:flex; flex-direction:column;}
+  .price-options .price-card .btn{margin-top:auto;}
+  .tarieven-grid .price-card{display:flex; flex-direction:column;}
+  .tarieven-grid .price-card .eyebrow{margin-bottom:6px;}
+
+  /* OVER MIJ */
+  .over-mij{display:grid; gap:64px; align-items:start;}
+  @media(min-width:820px){.over-mij{grid-template-columns:.85fr 1.15fr; align-items:center;}}
+  .portrait-frame{
+    aspect-ratio:1/1; border-radius:50%; overflow:hidden; background:var(--rose);
+    width:100%; max-width:300px; margin:0 auto 0 0;
+  }
+  .portrait-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  /* REVIEWS placeholder */
+  .reviews-grid{display:grid; gap:20px; grid-template-columns:1fr;}
+  @media(min-width:760px){.reviews-grid{grid-template-columns:repeat(3,1fr);}}
+  .review-card{background:var(--white); border:1px solid rgba(74,40,16,.1); border-radius:16px; padding:24px;}
+  .review-card .stars{color:var(--terracotta); letter-spacing:2px; margin-bottom:10px;}
+  .review-card p{font-size:.92rem; font-style:italic; opacity:.9; margin-bottom:12px;}
+  .review-card .who{font-size:.82rem; font-weight:700; opacity:.7;}
+
+  /* FOOTER */
+  footer{background:var(--brown); color:var(--cream); padding:56px 0 30px;}
+  .footer-grid{display:grid; gap:32px; grid-template-columns:1fr; margin-bottom:36px;}
+  @media(min-width:700px){.footer-grid{grid-template-columns:1.3fr 1fr 1fr;}}
+  footer h4{color:var(--cream); font-size:1.1rem; margin-bottom:12px;}
+  footer a{opacity:.82;}
+  footer a:hover{opacity:1;}
+  footer .foot-links{display:flex; flex-direction:column; gap:8px; font-size:.9rem;}
+  .foot-bottom{border-top:1px solid rgba(255,248,243,.15); padding-top:20px; font-size:.82rem; opacity:.65; text-align:center;}
+
+  .sticky-cta{
+    position:fixed; bottom:18px; right:18px; z-index:60;
+  }
+  @media(min-width:760px){.sticky-cta{display:none;}}
+
+  /* VEERTJE DECORATIE */
+  section{ position:relative; }
+  .feather-deco{ position:absolute; pointer-events:none; z-index:0; opacity:.55; }
+  .feather-deco svg{ display:block; width:100%; height:100%; }
+</style>
+</head>
+<body>
+
+
+<header>
+  <nav class="container">
+    <a href="#top" class="logo"><img src="essentia-logo.jpeg" alt="Essentia Holistic Care"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#lichaam">Lichaam</a>
+      <a href="#gezicht">Gezicht</a>
+      <a href="#bewustzijn">Doorbraakcoaching</a>
+      <a href="ebook.html">Gratis ebook</a>
+      <a href="stresstest.html">Gratis Stresstest</a>
+      <a href="#over">Over mij</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#tarieven">Tarieven</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0;">
+    <div class="feather-deco" style="top:0; right:4%; width:92px; height:139px; opacity:.85; transform:rotate(6deg);"><img src="essentia-veer.png" alt="" style="width:100%; height:100%; object-fit:contain;"></div>
+    <div class="container">
+      <span class="eyebrow">Best, Noord-Brabant</span>
+      <h1>Een gespannen lijf. Een druk hoofd. Weinig energie. <em>Herkenbaar?</em></h1>
+      <p class="lead">Bij Essentia Holistic Care kijk ik verder dan alleen de klacht — naar wat er in jou als geheel om aandacht vraagt. Via guasha, via bewustzijnscoaching, of allebei.</p>
+      <div style="display:flex; align-items:center; gap:10px; margin-top:14px; font-size:.88rem; opacity:.85;">
+        <span style="color:var(--terracotta); letter-spacing:1px;">★★★★★</span>
+        <span>5,0 sterren van cliënten uit Best en omgeving</span>
+      </div>
+      <a href="#kies" class="btn btn-primary" style="margin-top:16px; display:inline-block;">Ontdek wat bij jou past</a>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section style="padding:28px 0;">
+    <div class="container">
+      <div style="max-width:720px; margin:0 auto; background:var(--white); border:1px solid rgba(74,40,16,.1); border-radius:16px; padding:18px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;">
+        <span style="font-size:.92rem; opacity:.85;">Vragen, of gewoon een afspraak maken? Ik hoor graag van je.</span>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="tel:+31641479507" class="btn btn-outline" style="padding:10px 20px; font-size:.88rem;">06 41479507</a>
+          <a href="https://wa.me/31641479507" class="btn btn-primary" style="padding:10px 20px; font-size:.88rem;">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERKEN JE DIT -->
+  <section id="herkenning">
+    <div class="container">
+      <div class="section-head" style="max-width:720px;">
+        <span class="eyebrow">Herken je dit?</span>
+        <h2>Je bent hier waarschijnlijk niet <em>toevallig</em>.</h2>
+      </div>
+      <p style="max-width:640px; opacity:.9; font-size:1.05rem;">Die nekpijn die niet meer weggaat, of een bonkende hoofdpijn. Gedachten die 's avonds nog doorgaan, of stemmingen die met je op de loop gaan. De ene dag valt het mee, de andere dag trekt het de hele avond aan je aandacht. Bij een fysieke klacht ga je naar de fysio. Bij iets mentaals of emotioneels praat je een keer per week met een psycholoog. Het helpt een tijdje — tot er weer een nieuwe of andere klacht opduikt, en het oplossen weer helemaal van voren af aan begint.</p>
+    </div>
+  </section>
+
+  <!-- FILOSOFIE -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head" style="max-width:720px;">
+        <span class="eyebrow">Onze holistische kijk</span>
+        <h2>Bij Essentia gaat het om de <em>essentie</em>.</h2>
+      </div>
+      <div class="filosofie-grid">
+        <div>
+          <p style="opacity:.9;">De naam is geen toeval. Bij Essentia gaat het altijd om de kern: van je vraag, je klacht, en van wie je bent.</p>
+          <p style="opacity:.9; margin-top:12px;">Vanuit die kern werk ik met twee ingangen die elkaar versterken. <strong>Guasha</strong> brengt het lichaam terug in beweging: met een gladde steen werk ik gericht over de huid, waardoor vastzittende spanning en stagnatie naar de oppervlakte komen. Bewegingsbeperkingen lossen op, pijn verdwijnt — en de kleine rode vlekjes die daarbij soms verschijnen (sha) zijn het zichtbare bewijs dat er iets is losgekomen; ze trekken vanzelf weer weg binnen enkele dagen. <strong>Coaching</strong> brengt de geest terug in helderheid: belemmerende patronen worden doorbroken. Samen brengen ze lichaam en geest weer op één lijn.</p>
+          <p style="opacity:.9; margin-top:12px;">Essentia Holistic Care onderzoekt klachten en problemen daarom altijd vanuit een holistische kijk op de mens. Vind je dat interessant? Dan ben je hier aan het juiste adres.</p>
+        </div>
+        <div class="filosofie-photo">
+          <img src="essentia-guasha-nek.jpg" alt="Sha na een guasha-behandeling in de nek — zichtbaar bewijs dat vastzittende spanning is losgekomen.">
+          <p class="caption">Sha — het zichtbare bewijs dat vastzittende spanning is losgekomen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE PICKER -->
+  <section class="picker" id="kies">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Waar heb je nu behoefte aan?</span>
+        <h2>Kies wat het meest bij <em>jou</em> past.</h2>
+        <p>Twijfel je? Dat hoeft niet erg te zijn — ik help je graag de juiste ingang kiezen. Stuur gerust een appje als je er niet uitkomt.</p>
+      </div>
+      <div class="picker-grid">
+        <a href="#lichaam" class="picker-card">
+          <span class="tag">Lichaam</span>
+          <h3>Druk hoofd, gespannen nek en rug</h3>
+          <p>Malende gedachten. Een hoofd dat niet uitzet. Spanning die al weken in je nek en rug zit. Een hoofd/nek/rug-behandeling brengt je zenuwstelsel terug in rust — en soms is dat pas het begin.</p>
+          <span class="go">Bekijk lichaamsbehandelingen →</span>
+        </a>
+        <a href="#gezicht" class="picker-card">
+          <span class="tag">Gezicht</span>
+          <h3>Gewoon heerlijk ontspannen</h3>
+          <p>Geen zware klacht — gewoon zin om te genieten en helemaal tot rust te komen. Dan is dit 'm. Zacht, verzorgend, en een uurtje dat volledig van jou is.</p>
+          <span class="go">Bekijk gezichtsbehandeling →</span>
+        </a>
+        <a href="#bewustzijn" class="picker-card">
+          <span class="tag">Doorbraakcoaching</span>
+          <h3>Vastzittende patronen, geen richting</h3>
+          <p>Je functioneert prima, op papier. Maar voelt het ook zo vrij als het eruitziet? Doorbraakcoaching helpt je ontdekken wat er gebeurt als je stopt met vechten tegen jezelf.</p>
+          <span class="go">Bekijk coaching →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LICHAAM -->
+  <section id="lichaam" class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">01 — Lichaam</span>
+        <h2>Waar het lichaam <em>loslaat</em> wat het hoofd vasthoudt.</h2>
+        <p>Guasha kijkt verder dan het symptoom en brengt onderliggende spanning naar de oppervlakte, zodat je lichaam écht kan herstellen.</p>
+      </div>
+
+      <div class="section-photo"><img src="essentia-guasha-portret.jpg" alt="Carine Beerens, guasha-behandelaar bij Essentia Holistic Care" style="object-position:50% 20%;"></div>
+
+      <ul class="klachten-list">
+        <li>Nek- en schouderklachten</li>
+        <li>Spanningshoofdpijn</li>
+        <li>Lage rugpijn</li>
+        <li>Ischias / hernia</li>
+        <li>Frozen shoulder</li>
+        <li>Tennisarm / RSI</li>
+        <li>Kniepijn en slijtage</li>
+        <li>Zware, vermoeide benen</li>
+        <li>Slechte doorbloeding</li>
+        <li>Terugkerende klachten na fysio</li>
+      </ul>
+
+      <h3 style="margin-top:28px; margin-bottom:4px;">Kies je behandeling</h3>
+      <div class="price-options">
+        <div class="price-card">
+          <span class="eyebrow">Total Release</span>
+          <div class="amount">€70</div>
+          <div class="duration">60 minuten</div>
+          <ul>
+            <li>Hoofd, nek, schouders of rug</li>
+            <li>Volledige guasha-behandeling</li>
+          </ul>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20voor%20een%20Total%20Release%20behandeling%20(hoofd%2C%20nek%2C%20schouders%20of%20rug%2C%2060%20min)." target="_blank" rel="noopener" class="btn btn-outline" style="width:100%; text-align:center;">Plan je afspraak</a>
+        </div>
+
+        <div class="price-card">
+          <span class="eyebrow">Gerichte Release</span>
+          <div class="amount">€50</div>
+          <div class="duration">45 minuten</div>
+          <ul>
+            <li>Eén specifieke zone of klacht</li>
+            <li>Snel, gericht resultaat</li>
+          </ul>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20voor%20een%20Gerichte%20Release%20behandeling%20(45%20min%2C%20%C3%A9%C3%A9n%20specifieke%20zone%20of%20klacht)." target="_blank" rel="noopener" class="btn btn-outline" style="width:100%; text-align:center;">Plan je afspraak</a>
+        </div>
+
+        <div class="price-card">
+          <span class="eyebrow">Beenrelease</span>
+          <div class="amount">vanaf €70</div>
+          <div class="duration">60–90 min, in blokken van 15 min — altijd één been per keer</div>
+          <ul>
+            <li>60 minuten — €70</li>
+            <li>75 minuten — €82,50</li>
+            <li>90 minuten — €95</li>
+          </ul>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20voor%20een%20beenbehandeling." target="_blank" rel="noopener" class="btn btn-outline" style="width:100%; text-align:center;">Plan je afspraak</a>
+        </div>
+      </div>
+
+      <p style="max-width:720px; margin-top:24px; font-size:.9rem; opacity:.8;">Twijfel je, of heb je een vraag? <a href="https://wa.me/31641479507" style="color:var(--terracotta); font-weight:700;">Stuur me gerust een berichtje.</a></p>
+    </div>
+  </section>
+
+  <!-- GEZICHT -->
+  <section id="gezicht">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">02 — Gezicht</span>
+        <h2>Totale <em>ontspanning</em> van lichaam én geest.</h2>
+        <p>Een zachte, opwaartse guasha-massage langs de meridianen van je gezicht — brengt doorbloeding en lymfestroom op gang, en laat spanning in kaak en voorhoofd wegsmelten.</p>
+      </div>
+
+      <div class="section-photo"><img src="essentia-ligbank.jpg" alt="Behandelruimte van Essentia Holistic Care, met de ligbank klaargemaakt voor een gezichtsbehandeling" style="object-position:50% 30%;"></div>
+
+      <ul class="klachten-list">
+        <li>Gespannen kaak</li>
+        <li>Vermoeide uitstraling</li>
+        <li>Doffe huid</li>
+        <li>Wallen en zwelling</li>
+        <li>Spanning rond de ogen</li>
+        <li>Fijne lijntjes</li>
+      </ul>
+
+      <h3 style="margin-top:28px; margin-bottom:4px;">Kies je behandeling</h3>
+      <div class="price-options cols-1">
+        <div class="price-card">
+          <span class="eyebrow">Gezichtsbehandeling guasha</span>
+          <div class="amount">€90</div>
+          <div class="duration">90 minuten — hoofdbehandeling</div>
+          <ul>
+            <li>Volledige gezichtsbehandeling</li>
+            <li>Zachte, verfijnde guasha-techniek</li>
+          </ul>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20voor%20een%20gezichtsbehandeling%20met%20guasha%20(90%20min)." target="_blank" rel="noopener" class="btn btn-outline" style="width:100%; text-align:center;">Plan je afspraak</a>
+        </div>
+      </div>
+
+      <p style="max-width:720px; margin-top:24px; font-size:.9rem; opacity:.8;">Zit de spanning meer in je hoofd zelf — malende gedachten, een hoofd dat niet uitzet — dan past een <a href="#lichaam" style="color:var(--terracotta); font-weight:700;">hoofd/nek/rug-behandeling</a> vaak beter, eventueel aangevuld met <a href="#bewustzijn" style="color:var(--terracotta); font-weight:700;">coaching</a>.</p>
+    </div>
+  </section>
+
+  <!-- BEWUSTZIJN -->
+  <section id="bewustzijn" class="alt">
+    <div class="feather-deco" style="top:12px; right:5%; width:78px; height:118px; opacity:.7; transform:rotate(-8deg);"><img src="essentia-veer.png" alt="" style="width:100%; height:100%; object-fit:contain;"></div>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">03 — Doorbraak programma 'VEERKRACHT'</span>
+        <h2>Doorbreek wat je <em>groei</em> in de weg staat.</h2>
+        <p>Iedereen ontwikkelt patronen — vaste manieren van denken, voelen en reageren die ooit een functie hadden. Ze beschermden je, hielpen je overleven, zorgden dat je erbij hoorde. Maar een patroon dat je vroeger diende, kan je nu juist beperken: het kost energie, houdt je klein, en zorgt voor een voortdurende strijd met jezelf en het leven.</p>
+        <p style="margin-top:12px;">In dit traject maak je die patronen zichtbaar, doorbreek je wat niet meer helpt, en leer en ervaar je een nieuwe manier van zijn. Zodat je weer toegang krijgt tot je volle potentieel — in plaats van beperkt te worden door wat ooit nodig was.</p>
+      </div>
+
+      <div class="section-photo"><img src="essentia-coachstoel.jpg" alt="De coachstoel bij Essentia Holistic Care, de plek voor doorbraakcoaching" style="object-position:50% 30%;"></div>
+
+      <ul class="klachten-list">
+        <li>Vastzittende patronen</li>
+        <li>Innerlijke strijd</li>
+        <li>Beperkende overtuigingen</li>
+        <li>Irritatie of boosheid</li>
+        <li>Stemmingswisselingen</li>
+        <li>Moeite met richting kiezen</li>
+        <li>Moeizame relatie met jezelf of anderen</li>
+        <li>Succesvol maar niet gelukkig</li>
+      </ul>
+
+      <h3 style="margin-top:28px; margin-bottom:4px;">Het traject</h3>
+      <div class="price-options cols-1">
+        <div class="price-card">
+          <span class="eyebrow">Doorbraak programma 'VEERKRACHT'</span>
+          <div class="amount">Prijs op aanvraag</div>
+          <div class="duration">4 sessies van 2,5 uur — guasha apart bij te boeken</div>
+          <ul>
+            <li>Gratis oriëntatiegesprek (60–90 min)</li>
+            <li>Persoonlijk plan met jouw doelen</li>
+            <li>Bewust worden → doorbreken → ervaren → implementeren</li>
+            <li>Concrete tools voor blijvende verandering</li>
+          </ul>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20gratis%20ori%C3%ABntatiegesprek%20inplannen%20voor%20doorbraakcoaching." class="btn btn-outline" style="width:100%; text-align:center;">Plan een gratis oriëntatiegesprek</a>
+        </div>
+      </div>
+
+      <div style="max-width:760px; margin-top:36px;">
+        <h3 style="margin-bottom:8px;">Wat is doorbraakcoaching?</h3>
+        <p style="opacity:.9;">Een patroon is een vaste manier van denken, voelen of reageren die je op enig moment hebt aangeleerd — vaak al vroeg in je leven. Ooit had het een functie: het beschermde je, hielp je overleven, zorgde dat je erbij hoorde. Maar wat je toen diende, kan je nu beperken. Het kost energie, houdt je klein, en zorgt voor een voortdurende strijd — met jezelf, met anderen, met het leven.</p>
+        <p style="opacity:.9; margin-top:10px;">Herkenbaar: je functioneert, misschien zelfs goed. Maar van binnen voel je onrust, twijfel, of een gevoel dat je jezelf tekortdoet. Kleine dingen raken je harder dan zou moeten. Je merkt dat je jezelf afsluit, of juist te veel geeft, zonder dat je dat bewust kiest.</p>
+
+        <h3 style="margin:24px 0 8px;">Het doel</h3>
+        <p style="opacity:.9;">Niet dat je harder wordt of minder voelt. Wel dat je steeds beter de weg terug naar jezelf kent — zodat er, ook onder druk, weer ruimte ontstaat voor helderheid en bewust kiezen. Alleen praten over het probleem verandert niets. Mij zomaar geloven trouwens ook niet. Je gaat experimenteren met wat ik zeg — pas dan worden jouw eigen ervaringen leidend voor jouw verandering. Dát beklijft. Een inzicht alleen, niet.</p>
+
+        <h3 style="margin:24px 0 8px;">Wat je kunt verwachten</h3>
+        <p style="opacity:.9;">We werken in vier stappen, met een vast ritme per sessie:</p>
+        <p style="opacity:.9; margin-top:10px;"><strong>1. Bewust worden.</strong> Het patroon wordt zichtbaar — niet als tekortkoming, maar als iets wat ooit logisch was.<br><strong>2. Doorbreken.</strong> Je leert het patroon herkennen op het moment zelf, in plaats van het te bestrijden.<br><strong>3. Ervaren.</strong> Je voelt in je lichaam hoe het anders kan — pas dan landt verandering echt.<br><strong>4. Implementeren.</strong> Je neemt het mee je dagelijks leven in, zodat het blijft hangen, ook onder druk.</p>
+
+        <h3 style="margin:24px 0 8px;">De resultaten</h3>
+        <p style="opacity:.9;">Minder strijd, meer ruimte. Je krijgt weer toegang tot wie je in essentie bent — in plaats van dat een oud patroon daar nog tussen staat.</p>
+
+        <p style="margin-top:20px; padding-top:16px; border-top:1px dashed rgba(74,40,16,.15); font-size:.85rem; opacity:.75;">Essentia Holistic Care — gezondheid begint bij innerlijke stabiliteit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUURZAAM HERSTEL -->
+  <section>
+    <div class="container">
+      <div class="section-head" style="max-width:720px;">
+        <span class="eyebrow">Waar ik naartoe werk</span>
+        <h2>Het doel is niet dat je mij <em>nodig</em> blijft hebben.</h2>
+      </div>
+      <p style="max-width:720px; opacity:.9; margin-bottom:16px;">Effectief en duurzaam herstel — dat vind ik het belangrijkste van alles. Dat je zelf weer in staat bent om te helen, om gezond te blijven, om te voelen wanneer iets vraagt om aandacht. Niet dat je van mij afhankelijk wordt.</p>
+      <p style="max-width:720px; opacity:.9;">Een ontspannen behandeling, gewoon omdat je jezelf dat cadeau wilt doen? Altijd welkom — daar hoeft niets zwaars aan te hangen. Maar als het bij symptomen wegmasseren blijft, terwijl er onder die spanning iets ligt dat om echte aandacht vraagt, dan gun ik je meer dan dat. Dan gun ik je de kans om daadwerkelijk de kern aan te pakken — voor innerlijke rust en ontspanning die blijft, in plaats dat er telkens spanning, onrust en stress terugkomt.</p>
+    </div>
+  </section>
+
+  <!-- OVER MIJ -->
+  <section id="over" class="alt">
+    <div class="container">
+      <div class="over-mij">
+        <div class="portrait-frame"><img src="essentia-hero.jpg" alt="Carine Beerens, oprichter van Essentia Holistic Care" style="object-position:78% 28%;"></div>
+        <div>
+          <span class="eyebrow">Over mij</span>
+          <h2 style="margin:14px 0 18px; font-size:clamp(1.8rem,3.4vw,2.4rem);">Ik weet hoe het voelt om op je eigen <em>krant</em> te zitten.</h2>
+          <p style="margin-bottom:14px; opacity:.9;">Zonder dat je het doorhebt. Jarenlang liep ik rond met een onzeker gevoel, negatieve gedachtes, een zeurende onderrug, spierspanning, peesontstekingen, een opgejaagd gevoel. Ik zag risico's waar ik uitdagingen had kunnen zien. Ik dacht dat ik dat gewoon was. Ik was toen toch al begin 40. De grote onwetende, dat was ik wel. Tot ik ontdekte dat het niet ging om wie ik was — maar om waar ik van was afgedreven.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Het sluipt erin. Niet met een groot moment, maar geleidelijk. Ineens merk je gedachten op die er eerst niet waren. Gevoelens die je niet herkent. Klachten die vroeger nooit speelden en nu ineens wel.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">En dan gaan we automatisch naar de klacht kijken. Want klachten zijn de taal van ons lichaam — een aanhoudende hoofdpijn, een vastzittende rug, het piekeren dat maar niet stopt. We proberen het op te lossen, weg te krijgen. Logisch, want het voelt vervelend.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Maar precies daardoor ontglipt ons de kans op iets essentieels. De vraag die er eigenlijk toe doet, blijft onbeantwoord: waarin ben ik niet eerlijk tegen mezelf? Wat ben ik aan het ontkennen?</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Want klachten staan zelden op zichzelf. Ze zijn een signaal dat we van koers zijn geraakt — een beetje, of soms zeer ernstig. We drijven onbewust af, met alle gevolgen van dien: scheidingen, ziekmeldingen, verslavingen, burn-outs die steeds jonger toeslaan, overspannen kinderen. We vluchten in werk, in perfectionisme, in van alles — om maar niet te hoeven voelen wat er onder ligt.</p>
+
+          <h3 style="margin:26px 0 10px; font-size:1.3rem;">Hoe ik daar zelf uitkwam</h3>
+          <p style="margin-bottom:14px; opacity:.9;">In 2020 volgde ik de opleiding tot Holistische Doorbraak Coach. Niet vanuit nieuwsgierigheid alleen, maar omdat ik zelf door het afvoerputje was gegaan en mezelf opnieuw moest uitvinden. Ik leerde mijn kompas opnieuw ijken — en ontdekte dat dat een vaardigheid is die je kunt leren. Iets wat de meesten van ons als kind nooit hebben meegekregen, maar wat je als volwassen mens wél kunt ontwikkelen.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Ik doorbreek nog dagelijks patronen vanuit mijn oude systeem. Het verschil is dat ik het nu sneller zie, voel wat het met me doet, en steeds vaker kies om het anders te doen.</p>
+
+          <h3 style="margin:26px 0 10px; font-size:1.3rem;">Hoe ik nu werk</h3>
+          <p style="margin-bottom:14px; opacity:.9;">Ik help mensen niet alleen om van de klacht af te komen. Ik trek — veilig en vanuit liefde — de krant onder je vandaan. Zodat je met heldere ogen kunt zien, met een open hart kunt voelen, en met een kalme geest kunt begrijpen wat er werkelijk speelt.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Dat doe ik in drie lagen: lichaam, emotie, bewustzijn. Guasha is de lichamelijke ingang — het maakt voelbaar wat je hoofd nog niet toegeeft. Coaching brengt de verdieping: helderheid, richting, en de vaardigheden om je kompas blijvend bij te stellen.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Dat zorgt voor rust. Voor ruimte. Voor regie. Voor richting.</p>
+
+          <h3 style="margin:26px 0 10px; font-size:1.3rem;">Voor wie ik dit doe</h3>
+          <p style="margin-bottom:14px; opacity:.9;">Voor mensen die klachten ervaren, maar nieuwsgierig zijn om een laag dieper te kijken in zichzelf. Naar hun eigen kompas, hun functioneren. Die ergens voelen dat er iets moet veranderen waardoor het beter wordt, maar stagneren omdat ze niet weten hoe of waar te beginnen.</p>
+
+          <h3 style="margin:26px 0 10px; font-size:1.3rem;">Wat ik je gun</h3>
+          <p style="margin-bottom:14px; opacity:.9;">Ik gun je dat je eerlijk kunt zijn naar jezelf. Dat je de waarheid onder ogen durft te komen, voorbij alle illusies die je jarenlang staande hebben gehouden.</p>
+
+          <p style="margin-bottom:14px; opacity:.9;">Je hoeft niet meteen te weten welke weg dat is. Je kunt beginnen met guasha — met mij leren kennen, ervaren wat er gebeurt als je lichaam eindelijk mag loslaten. Dat brengt je misschien vanzelf een stapje dichter bij coaching. Of je voelt meteen dat je dieper wilt. Welke route ook goed voelt — begin gewoon.</p>
+
+          <p style="margin-bottom:18px; opacity:.9;">Benieuwd wat er op jouw krant staat?</p>
+          <a href="https://wa.me/31641479507?text=Hoi%20Carine%2C%20ik%20wil%20graag%20een%20afspraak%20maken%20voor%20een%20Essentia%20Reset%20Sessie." class="btn btn-primary">Plan je afspraak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Ervaringen</span>
+        <h2>5,0 sterren van <em>cliënten</em> uit Best en omgeving.</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Vandaag een Total Release en een Gezichtsbehandeling guasha mogen ontvangen. Die laatste is indien mogelijk nog ontspannender. Het is nergens pijnlijk, je voelt een heerlijke zachte druk en een diepe ontspanning. Carine geeft de guasha behandeling met oprechte aandacht en warme energie. Heel fijn!"</p>
+          <div class="who">Marleen, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Ik kwam bij Carine op een moment dat ik hoog in mijn emoties zat en niet echt rationeel aan het denken was. Maar Carine wist precies wat het kind in mij nodig had — wist ze me tot rust te brengen, waardoor ik weer naar binnen kon keren en kon voelen dat de kracht en macht uiteindelijk bij mijzelf ligt. Carine straalt liefde, vertrouwen en warmte uit."</p>
+          <div class="who">Britt, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Wat een fijne ervaring heb ik gehad bij Carine. Carine is een hele fijne, lieve, warme vrouw die je welkom heet in haar fijne praktijk aan huis, ze luistert, stelt je vragen en deelt haar kennis met je. De behandeling zelf was nieuw voor mij, maar Carine heeft mij er stap voor stap doorheen begeleid. Stop met twijfelen! Echt een aanrader en een super fijne ervaring! Dankjewel."</p>
+          <div class="who">Fleur, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Carine is heel professioneel, warm en hartelijk. Alles is altijd goed verzorgd en ze luistert met een open hart en oprechte interesse. Of je nu coaching bij haar volgt of een guasha behandeling, bij haar ben je in goede handen."</p>
+          <div class="who">Josephine, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Bijzonder! Niet zomaar een lichamelijke behandeling. Door een onverwachte open vraag te combineren met de guasha neemt Carine je mee in een prachtige ervaring. Ik heb spieren gevoeld waarvan ik niet eens wist dat ik ze had. Aanrader!"</p>
+          <div class="who">Caroline, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"De guasha behandelingen hebben een positieve bijdrage gehad aan het herstel van mijn burn-outklachten en overprikkeling van mijn zenuwstelsel. Daarnaast heb ik veel baat gehad bij de vakkundige begeleiding van Carine. Ik kan het iedereen aanraden."</p>
+          <div class="who">Bertie, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Ik heb Carine leren kennen als een lieve, warme vrouw die weet waar ze over praat en vol passie haar vak beoefent. Loop je ergens tegenaan, dan ben je bij haar op het juiste adres om samen op zoek te gaan naar de verandering die je nodig hebt."</p>
+          <div class="who">Karin, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Betrouwbaar, eerlijk, behulpzaam, intelligent, kennis van zaken, geduldig en goed geschoold — altijd het juiste advies om je verder te helpen. Bij Carine zit je goed als je het zelf even niet meer weet."</p>
+          <div class="who">Mirjam, Google review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Ik wil je bedanken voor alle sessies die we gedaan hebben. Wonderlijk hoe het me hielp. Ik heb weer positieve energie voor de mensen en de dingen om me heen!"</p>
+          <div class="who">Maud, Google review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIEVEN OVERZICHT -->
+  <section id="tarieven" class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Investering</span>
+        <h2>Alle behandelingen op een <em>rij</em>.</h2>
+      </div>
+      <div class="tarieven-grid">
+        <div class="price-card">
+          <span class="eyebrow">Lichaam</span>
+          <div class="amount">€70</div>
+          <div class="duration">60 min — volledige behandeling</div>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">Lichaam — kort</span>
+          <div class="amount">€50</div>
+          <div class="duration">45 min — gerichte zone</div>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">Benen</span>
+          <div class="amount">vanaf €70</div>
+          <div class="duration">60–90 min, in blokken van 15 min</div>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">Gezicht</span>
+          <div class="amount">€90</div>
+          <div class="duration">90 min — hoofdbehandeling</div>
+        </div>
+        <div class="price-card">
+          <span class="eyebrow">Doorbraakcoaching</span>
+          <div class="amount">Prijs op aanvraag</div>
+          <div class="duration">Traject van 4 sessies van 2,5 uur</div>
+        </div>
+      </div>
+
+      <div style="max-width:720px; margin:36px auto 0; background:var(--white); border:1px solid rgba(74,40,16,.1); border-radius:16px; padding:18px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;">
+        <span style="font-size:.92rem; opacity:.85;">Twijfel je nog, of wil je gewoon boeken? Ik hoor graag van je.</span>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="tel:+31641479507" class="btn btn-outline" style="padding:10px 20px; font-size:.88rem;">06 41479507</a>
+          <a href="https://wa.me/31641479507" class="btn btn-primary" style="padding:10px 20px; font-size:.88rem;">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="position:relative;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Essentia Holistic Care</h4>
+        <p style="opacity:.8; font-size:.92rem; max-width:320px;">Guasha lichaams- en gezichtsbehandelingen, en bewustzijnswerk via coaching. Best, Noord-Brabant.</p>
+      </div>
+      <div>
+        <h4>Navigatie</h4>
+        <div class="foot-links">
+          <a href="#lichaam">Lichaam</a>
+          <a href="#gezicht">Gezicht</a>
+          <a href="#bewustzijn">Bewustzijn</a>
+          <a href="#tarieven">Tarieven</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="foot-links">
+          <a href="https://wa.me/31641479507">WhatsApp</a>
+          <a href="mailto:carinebeerens@gmail.com">carinebeerens@gmail.com</a>
+          <a href="https://www.instagram.com/carine_beerens/">Instagram</a>
+          <a href="https://www.linkedin.com/in/carine-beerens/">LinkedIn</a>
+          <a href="huisregels-essentia.pdf" target="_blank" rel="noopener">Huisregels (PDF)</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Carine Beerens — Essentia Holistic Care, Best, Noord-Brabant</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/31641479507" class="btn btn-primary sticky-cta">WhatsApp</a>
+
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
